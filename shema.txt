@@ -1,0 +1,104 @@
+Voici les structures exactes que vous pouvez imposer à l'IA d'extraire :
+
+1. Carte Grise (Certificat d'immatriculation)
+
+
+{
+  "document_type": "carte_grise",
+  "status": "success",
+  "data": {
+    "numero_immatriculation": "AB-123-CD",       // Champ A
+    "date_premiere_immatriculation": "05/01/1998", // Champ B
+    "proprietaire_nom": "DUPONT",                // Champ C.1
+    "proprietaire_prenom": "YVES",               // Champ C.1
+    "proprietaire_adresse": "27 RUE DES ROITELETS, 59169 FERIN", // Champ C.3
+    "marque": "RENAULT",                         // Champ D.1
+    "modele": "CLIO",                            // Champ D.3
+    "numero_chassis_vin": "VF1BS400523456789"    // Champ E
+  }
+}
+
+2. Carte Verte (Attestation d'assurance)
+
+
+{
+  "document_type": "carte_verte",
+  "status": "success",
+  "data": {
+    "assurance_compagnie": "MAIF",
+    "numero_contrat_police": "F 567 32",
+    "valable_du": "01/01/2018",
+    "valable_au": "31/12/2019",
+    "numero_immatriculation": "AA-123-AA",
+    "marque_vehicule": "PEUGEOT",
+    "assure_nom_complet": "NOM DE L'ASSURÉ",
+    "assure_adresse": "75000 VILLE"
+  }
+}
+
+3. Permis de Conduire (Nouveau ou Ancien)
+
+
+{
+  "document_type": "permis_conduire",
+  "status": "success",
+  "data": {
+    "nom": "MARTIN",
+    "prenom": "Paul",
+    "date_naissance": "14/07/1981",
+    "lieu_naissance": "Utopia city",
+    "date_delivrance": "01/01/2013",
+    "date_expiration": "31/12/2028",
+    "numero_permis": "13AA00002",
+    "categories_obtenues": ["AM", "A", "A1", "B1", "B"] // Tableau des catégories visibles
+  }
+}
+
+4. Constat Amiable d'Accident (Le plus complexe)
+
+
+{
+  "document_type": "constat_amiable",
+  "status": "success",
+  "data": {
+    "informations_generales": {
+      "date_accident": "03/10/2024",
+      "heure_accident": "12:14",
+      "lieu_pays": "France",
+      "lieu_exact": "Rue de la Libération, 42000 Saint Etienne",
+      "blesses": false,
+      "degats_materiels_autres": false,
+      "temoins": "Stephane Godin, stephgodin@gmail.com, 0651159972"
+    },
+    "vehicule_a": {
+      "assure_nom": "FAURE",
+      "assure_prenom": "Aymerick",
+      "assure_telephone": "06 51 33 12 25",
+      "vehicule_marque_type": "Renault Clio 3",
+      "vehicule_immatriculation": "722-FXL-92",
+      "assurance_nom": "DIRECT ASSURANCE",
+      "assurance_numero_contrat": "5092052666",
+      "conducteur_nom": "FAURE",
+      "conducteur_prenom": "Aymerick",
+      "conducteur_numero_permis": "24AB20112",
+      "degats_apparents": "Pare choc DROIT endommagé",
+      "observations": "N'avait pas mis de clignotant !",
+      "circonstances_cochees": [8] // Les numéros des cases cochées au milieu (ex: 8 = "heurtait à l'arrière")
+    },
+    "vehicule_b": {
+      "assure_nom": "KERVRAN",
+      "assure_prenom": "Anne",
+      "assure_telephone": "06 32 32 18 29",
+      "vehicule_marque_type": "Peugeot 208",
+      "vehicule_immatriculation": "DG-789-TR",
+      "assurance_nom": "FLITTER",
+      "assurance_numero_contrat": "120123975",
+      "conducteur_nom": "KERVRAN",
+      "conducteur_prenom": "Anne",
+      "conducteur_numero_permis": "18AB30415",
+      "degats_apparents": "Angle arrière droit du pare-choc",
+      "observations": "Etait sur son téléphone !",
+      "circonstances_cochees": [] 
+    }
+  }
+}
