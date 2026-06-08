@@ -1,5 +1,5 @@
 
-```
+
 # Extraction Agent 📄
 
 A powerful document extraction system designed to intelligently extract structured data from French legal and administrative documents using Vision LLM APIs.
